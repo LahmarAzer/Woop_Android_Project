@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Assuming there are more TextViews and Views here... -->
+
+        <ImageView
+            android:id="@+id/tripImageView"
+            android:layout_width="match_parent"
+            android:layout_height="235dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img1" />
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_marginTop="250dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_below="@+id/tripImageView"
+            android:text="Help us on our kite school"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:id="@+id/textViewLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Djerba, Tunisia"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            android:layout_below="@+id/textViewTitle"/>
+
+        <TextView
+            android:id="@+id/textViewHost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Host: Ahmed"
+            android:layout_below="@+id/textViewLocation"/>
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="@style/CustomRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_below="@+id/textViewHost"
+            android:numStars="5"
+            android:rating="4.0"
+            android:stepSize="0.5" />
+
+        <TextView
+            android:id="@+id/textViewRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.0"
+            android:layout_toEndOf="@+id/ratingBar"
+            android:layout_alignBottom="@+id/ratingBar"
+            android:paddingStart="4dp"
+            android:textColor="@color/green"/>
+
+
+        <!-- Statistic Widgets -->
+        <LinearLayout
+            android:id="@+id/linearLayoutStats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/ratingBar"
+            android:weightSum="3">
+
+
+
+            <TextView
+                android:id="@+id/textViewFeedback"
+                android:layout_width="2dp"
+                android:layout_height="90dp"
+                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/explore_button_background"
+                android:gravity="center"
+                android:text="14\nFeedback"
+                android:textColor="@color/green" />
+
+            <TextView
+                android:id="@+id/textViewLastActivity"
+                android:layout_width="2dp"
+                android:layout_height="90dp"
+                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/explore_button_background"
+                android:text="1h\nLast activity"
+                android:gravity="center"
+                android:textColor="@color/green"/>
+
+            <TextView
+                android:id="@+id/textViewReplyRate"
+                android:layout_width="2dp"
+                android:layout_height="90dp"
+                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/explore_button_background"
+                android:text="86%\nReply Rate"
+                android:gravity="center"
+                android:textColor="@color/green"/>
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/linearLayoutStats"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@android:color/darker_gray" />
+
+        <!-- List of items -->
+        <TextView
+            android:id="@+id/textViewDescription"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/divider1"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:text="Hey, I’m Ahmed, I’m living in Djerba and I’m the owner of a Kitesurf school located in Djerba next to a big beautiful lagoon with..."
+            android:maxLines="4"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:id="@+id/textViewReadMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewDescription"
+            android:text="Read more"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:textColor="#0dde7d"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/textViewReadMore"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/textViewHelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Type Of Help Needed"
+            android:layout_marginTop="10dp"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            android:layout_below="@+id/divider2"/>
+
+        <GridLayout
+            android:id="@+id/gridLayout1"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewHelp"
+            android:layout_marginTop="10dp"
+            android:columnCount="3"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            android:rowCount="4">
+
+            <FrameLayout
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_margin="2dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/explore_button_background">
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_marginStart="7dp"
+                    android:src="@drawable/construction" />
+            </FrameLayout>
+
+
+            <!-- End Block -->
+        </GridLayout>
+        <GridLayout
+            android:id="@+id/gridLayout2"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/textViewHelp"
+            android:layout_marginLeft="140dp"
+            android:columnCount="3"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            android:rowCount="4">
+
+            <FrameLayout
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_margin="2dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/explore_button_background">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="99dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_marginStart="7dp"
+                    android:src="@drawable/gardening" />
+            </FrameLayout>
+
+
+            <!-- End Block -->
+        </GridLayout>
+        <GridLayout
+            android:id="@+id/gridLayout3"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="280dp"
+            android:layout_below="@+id/textViewHelp"
+            android:columnCount="3"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            android:rowCount="4">
+
+            <FrameLayout
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_margin="2dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/explore_button_background">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_marginStart="7dp"
+                    android:src="@drawable/education" />
+            </FrameLayout>
+
+        </GridLayout>
+
+        <!-- List of items -->
+        <TextView
+            android:id="@+id/textViewhelpneeded"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/gridLayout3"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:text="I'm looking for someone who knows to do some of the things up here like..."
+            android:maxLines="4"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:id="@+id/helpReadMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewhelpneeded"
+            android:text="Read more"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:textColor="#0dde7d"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/helpReadMore"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/textViewLanguages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/divider3"
+            android:layout_marginStart="20dp"
+            android:text="Languages Spoken"
+            android:layout_marginTop="10dp"
+            android:textAppearance="?attr/textAppearanceSubtitle1" />
+
+        <TextView
+            android:id="@+id/textViewLangues"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/textViewLanguages"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:text="German, English, Frensh, Arabic"
+            android:maxLines="4"
+            android:ellipsize="end"/>
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/textViewLangues"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/textViewAmenities"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Amenities"
+            android:layout_marginTop="10dp"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            android:layout_below="@+id/divider4"/>
+
+        <GridLayout
+            android:id="@+id/gridLayout4"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewAmenities"
+            android:layout_marginTop="10dp"
+            android:columnCount="3"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            android:rowCount="4">
+
+            <FrameLayout
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_margin="2dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/explore_button_background">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="100dp"
+                    android:layout_height="79dp"
+                    android:layout_margin="2dp"
+                    android:layout_marginStart="7dp"
+                    android:src="@drawable/wifi" />
+            </FrameLayout>
+
+
+            <!-- End Block -->
+        </GridLayout>
+        <GridLayout
+            android:id="@+id/gridLayout5"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/textViewAmenities"
+            android:layout_marginLeft="140dp"
+            android:columnCount="3"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            android:rowCount="4">
+
+            <FrameLayout
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_margin="2dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/explore_button_background">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="100dp"
+                    android:layout_height="79dp"
+                    android:layout_margin="2dp"
+                    android:layout_marginStart="7dp"
+                    android:src="@drawable/bed" />
+            </FrameLayout>
+
+
+            <!-- End Block -->
+        </GridLayout>
+        <GridLayout
+            android:id="@+id/gridLayout6"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="280dp"
+            android:layout_below="@+id/textViewAmenities"
+            android:columnCount="3"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            android:rowCount="4">
+
+            <FrameLayout
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_margin="2dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/explore_button_background">
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="100dp"
+                    android:layout_height="79dp"
+                    android:layout_margin="2dp"
+                    android:layout_marginStart="7dp"
+                    android:src="@drawable/kitchen" />
+            </FrameLayout>
+
+        </GridLayout>
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider5"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/gridLayout6"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/textViewWoopers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/divider5"
+            android:layout_marginStart="20dp"
+            android:text="How many woopers can stay"
+            android:layout_marginTop="10dp"
+            android:textAppearance="?attr/textAppearanceSubtitle1" />
+
+        <TextView
+            android:id="@+id/textViewNumWoopers"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/textViewWoopers"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:text="More than two."
+            android:maxLines="4"
+            android:ellipsize="end"/>
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider6"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/textViewNumWoopers"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/textViewHoursExpected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Hours Expected"
+            android:layout_marginTop="10dp"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            android:layout_below="@+id/divider6"/>
+
+        <TextView
+            android:id="@+id/textViewHours"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/textViewHoursExpected"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:text="5 hours a day, 5 days a week, depends on the situation."
+            android:maxLines="4"
+            android:ellipsize="end"/>
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/textViewHours"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:apiKey="Your Google Maps API Key" />
+
+        <!-- Other views as seen in the screenshot... -->
+
+        <Button
+            android:id="@+id/ParticipateButton"
+            android:layout_below="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Participate"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="40dp"/>
+
+    </RelativeLayout>
+</ScrollView>
