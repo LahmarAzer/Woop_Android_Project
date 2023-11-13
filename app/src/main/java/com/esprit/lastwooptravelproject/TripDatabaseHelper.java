@@ -16,7 +16,7 @@ public class TripDatabaseHelper extends SQLiteOpenHelper {
     private Context context;
     // Database Information
     private static final String DATABASE_NAME = "trip.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     // Table Name
     public static final String TABLE_TRIPS = "trips";
@@ -42,7 +42,7 @@ public class TripDatabaseHelper extends SQLiteOpenHelper {
     // Creating table query
     private static final String CREATE_TABLE_TRIPS = "CREATE TABLE " + TABLE_TRIPS + "(" +
             _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            COLUMN_IMAGE_PATH + " TEXT NOT NULL, " +
+           // COLUMN_IMAGE_PATH + " TEXT NOT NULL, " +
             COLUMN_TITLE + " TEXT, " +
             COLUMN_LOCATION + " TEXT, " +
             COLUMN_HOST_NAME + " TEXT, " +

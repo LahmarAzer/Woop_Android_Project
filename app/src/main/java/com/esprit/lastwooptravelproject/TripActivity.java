@@ -1,11 +1,13 @@
 package com.esprit.lastwooptravelproject;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -59,6 +61,11 @@ public class TripActivity extends AppCompatActivity {
                 String bio = editTextBio.getText().toString().trim();
                 String helpDescription = editTextHelpDescription.getText().toString().trim();
                 String hoursDescription = editTextHoursDescription.getText().toString().trim();
+
+                // Debugging: Log the values retrieved from the EditTexts
+                Log.d("TripActivity", "Trip Title: " + Titre);
+                Log.d("TripActivity", "Trip Host Name: " + name);
+                Log.d("TripActivity", "Trip Location: " + location);
 
                 // Parse float for rating
                 float rating = 0.0f;
@@ -124,7 +131,7 @@ public class TripActivity extends AppCompatActivity {
         TripDatabaseHelper dbHelper = new TripDatabaseHelper(TripActivity.this);
         ArrayList<Trip> trips = dbHelper.getAllTrips2();
 
-        FrameLayout tripContainer = findViewById(R.id.tripContainer);
+        LinearLayout tripContainer = findViewById(R.id.tripsContainer);
         tripContainer.removeAllViews(); // Clear existing views
 
         // Inflate the layout for the static elements (rectangle and button)
@@ -134,13 +141,19 @@ public class TripActivity extends AppCompatActivity {
         for (Trip trip : trips) {
             // Inflate the offer card layout for each offer
             View tripCardView = getLayoutInflater().inflate(R.layout.trip_list_item, null);
+            Log.d("TripActivity", "Trip Title: " + trip.getTitre());
+            Log.d("TripActivity", "Trip name host: " + trip.getHostName());
+            Log.d("TripActivity", "Trip location: " + trip.getLocation());
+            Log.d("TripActivity", "Trip rating: " + trip.getRating());
+
+
 
             // Set offer details
             //ImageView offerImageView = offerCardView.findViewById(R.id.imageView);
             TextView itemTitle = tripCardView.findViewById(R.id.itemTitle);
             TextView itemLocation = tripCardView.findViewById(R.id.itemLocation);
             TextView textViewRating = tripCardView.findViewById(R.id.textViewRating);
-            RatingBar ratingBar = tripCardView.findViewById(R.id.ratingBar);
+            //RatingBar ratingBar = tripCardView.findViewById(R.id.ratingBar);
 
             // Assuming you have an 'image' field in your Offer class
             // Replace 'setImageResource' with the appropriate method based on your data
@@ -149,8 +162,9 @@ public class TripActivity extends AppCompatActivity {
             // Set the text data
             itemTitle.setText(trip.getTitre());
             itemLocation.setText(trip.getLocation());
-            textViewRating.setText((int) trip.getRating());
-            ratingBar.setRating(trip.getRating());
+            textViewRating.setText(String.valueOf(trip.getRating()));
+
+            //ratingBar.setRating(trip.getRating());
 
             // Add the inflated offer card view to the container
             tripContainer.addView(tripCardView);
