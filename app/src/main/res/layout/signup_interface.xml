@@ -79,7 +79,7 @@
         android:paddingEnd="20dp"
         />
 
-    <EditText
+    <!--<EditText
         android:id="@+id/validate_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -90,16 +90,16 @@
         android:background="@drawable/facebook_button_background"
         android:drawableEnd="@drawable/valid_pwd"
         android:paddingEnd="20dp"
-        android:inputType="textPassword" />
+        android:inputType="textPassword" />-->
 
 
     <Button
         android:id="@+id/sign_up_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/validate_password"
+        android:layout_below="@id/password"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="40dp"
 
