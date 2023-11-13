@@ -70,13 +70,15 @@
         android:id="@+id/edittext_nbFeedback"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter number of feedbacks" />
+        android:hint="Enter number of feedbacks"
+        android:inputType="number"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Last Activity (in hours)"
-        android:textColor="@color/green" />
+        android:textColor="@color/green"
+        android:inputType="number"/>
 
     <EditText
         android:id="@+id/edittext_lastActivity"
@@ -94,7 +96,8 @@
         android:id="@+id/edittext_replyPercentage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter reply percentage" />
+        android:hint="Enter reply percentage"
+        android:inputType="number"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -130,7 +133,8 @@
         android:id="@+id/edittext_nbWoopers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter number of Woopers" />
+        android:hint="Enter number of Woopers"
+        android:inputType="number"/>
 
     <TextView
         android:layout_width="wrap_content"
