@@ -175,6 +175,7 @@
                 android:padding="16dp"
                 android:text="Log Out" />
 
+
         </LinearLayout>
     </ScrollView>
 

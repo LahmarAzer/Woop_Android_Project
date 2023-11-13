@@ -1,7 +1,8 @@
-package tripPackage;
+package com.esprit.lastwooptravelproject;
 
 public class Trip {
     private String imagePath; // Store the image path as a String
+    private String titre;
     private String location;
     private String hostName;
     private float rating;
@@ -13,6 +14,13 @@ public class Trip {
     private int nbWoopers;
     private String hoursDescription;
 
+    public Trip(long tripId, String titre, String location, String hostName, float rating, int nbFeedback, double lastActivity, double replyPercentage, String bio, String helpDescription, int nbWoopers, String hoursDescription, String typeOfHelp, String languages, String amenities) {
+    }
+
+    public Trip() {
+
+    }
+
     public String getImagePath() {
         return imagePath;
     }
@@ -21,6 +29,13 @@ public class Trip {
         this.imagePath = imagePath;
     }
 
+    public String getTitre() {
+        return titre;
+    }
+
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
     public String getLocation() {
         return location;
     }

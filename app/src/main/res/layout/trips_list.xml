@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".TripActivity">
 
-    <RelativeLayout
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:id="@+id/tripContainer">
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -64,67 +67,18 @@
         android:searchIcon="@drawable/ic_search"
         android:inputType="text"
         android:maxLines="1" />
-    <!-- Start of card layout -->
 
-        <ImageView
-            android:id="@+id/itemImage"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/default_image"
-            android:layout_below="@+id/searchView"
-            android:scaleType="centerCrop"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="40dp"/>
-
-        <ImageView
-            android:id="@+id/heartIcon"
+        <Button
+            android:id="@+id/button_open_form"
+            android:backgroundTint="@color/green"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/itemImage"
-            android:layout_alignParentEnd="true"
-
-        android:layout_marginEnd="40dp"
-        android:src="@drawable/fav"
-        android:padding="8dp"
-        android:background="?attr/selectableItemBackgroundBorderless" />
+            android:layout_marginTop="160dp"
+            android:layout_below="@id/searchView"
+            android:text="Add Trip"
+            android:layout_marginLeft="5dp"
+            />
 
 
-        <TextView
-            android:id="@+id/itemTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/itemImage"
-            android:layout_marginTop="8dp"
-            android:text="Help us on our kite school"
-            android:textSize="18sp"
-            android:layout_marginStart="40dp"
-            android:textColor="#000"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/itemLocation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/itemTitle"
-            android:text="Djerba, Tunisia"
-            android:layout_marginStart="40dp"
-            android:textSize="14sp"
-            android:textColor="#666"
-            android:textStyle="bold"/>
-
-        <RatingBar
-            android:id="@+id/ratingBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/itemLocation"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="8dp"
-            android:numStars="5"
-            android:rating="4.0"
-            android:stepSize="0.5"
-            android:isIndicator="true"
-            style="@style/GreenRatingBar" />
-
-    </RelativeLayout>
+    </FrameLayout>
 </ScrollView>
