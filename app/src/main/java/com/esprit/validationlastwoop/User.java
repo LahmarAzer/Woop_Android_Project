@@ -1,4 +1,4 @@
-package UserPackage;
+package com.esprit.validationlastwoop;
 
 public class User {
     private String username;

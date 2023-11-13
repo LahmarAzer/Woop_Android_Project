@@ -1,15 +1,20 @@
-package UserPackage;
+package com.esprit.validationlastwoop;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.content.ContentValues;
 import android.database.Cursor;
+import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDatabaseHelper extends SQLiteOpenHelper {
 
     // Database Information
     private static final String DATABASE_NAME = "user.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     // Table Name
     public static final String TABLE_USERS = "users";
@@ -31,10 +36,29 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    @Override
+  /*  @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE_USERS);
-    }
+    }*/
+  @Override
+  public void onCreate(SQLiteDatabase db) {
+      try {
+          db.execSQL(CREATE_TABLE_USERS);
+          Log.d("Database Operations", "Table users created successfully.");
+         // logAllUsers();
+      } catch (Exception e) {
+          Log.d("Database Operations", "Error creating table users.");
+          e.printStackTrace();
+
+      }
+  }
+    /*public void logAllUsers() {
+        List<User> users = getAllUsers(); // Your existing method to fetch all users
+        for (User user : users) {
+            Log.d("Database Operations", "User: " + user.toString());
+        }
+    }*/
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -73,16 +97,45 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         return deletedRows > 0;
     }
 
-    public Cursor getAllUsers() {
+    public List<User> getAllUsers() {
+        List<User> users = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
-        return db.query(TABLE_USERS, null, null, null, null, null, null);
+        Cursor cursor = db.query(TABLE_USERS, null, null, null, null, null, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                @SuppressLint("Range") User user = new User(
+                        cursor.getString(cursor.getColumnIndex(COLUMN_USERNAME)),
+                        cursor.getString(cursor.getColumnIndex(COLUMN_EMAIL)),
+                        cursor.getString(cursor.getColumnIndex(COLUMN_PASSWORD))
+                );
+                users.add(user);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return users;
     }
 
-    public Cursor getUser(long userId) {
+    @SuppressLint("Range")
+    public User getUser(long userId) {
         SQLiteDatabase db = this.getReadableDatabase();
         String selection = _ID + " = ?";
         String[] selectionArgs = { String.valueOf(userId) };
-        return db.query(TABLE_USERS, null, selection, selectionArgs, null, null, null);
+        Cursor cursor = db.query(TABLE_USERS, null, selection, selectionArgs, null, null, null);
+
+        User user = null;
+        if (cursor.moveToFirst()) {
+            user = new User(
+                    cursor.getString(cursor.getColumnIndex(COLUMN_USERNAME)),
+                    cursor.getString(cursor.getColumnIndex(COLUMN_EMAIL)),
+                    cursor.getString(cursor.getColumnIndex(COLUMN_PASSWORD))
+            );
+        }
+        cursor.close();
+        db.close();
+        return user;
     }
+
 
 }
