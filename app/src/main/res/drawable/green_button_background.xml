@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="30dp"/> <!-- augmenter le rayon pour des coins plus arrondis -->
+            <solid android:color="#0dde7d"/> <!-- couleur de fond blanche -->
+            <!-- Vous pouvez ajouter un trait si vous voulez une bordure -->
+            <stroke android:width="1dp" android:color="#0dde7d"/> <!-- couleur de bordure pour correspondre à l'image, ajustez selon le besoin -->
+            <!-- Ajouter un padding si nécessaire -->
+            <padding android:left="10dp" android:top="10dp" android:right="10dp" android:bottom="10dp"/>
+        </shape>
+    </item>
+</selector>

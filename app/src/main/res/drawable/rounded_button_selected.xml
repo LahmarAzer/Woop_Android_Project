@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- When the button is pressed or focused, show a green background -->
+    <item android:state_pressed="true" >
+        <shape>
+            <solid android:color="#00FF00" /> <!-- Green color for pressed state -->
+            <corners android:radius="30dp" />
+        </shape>
+    </item>
+    <!-- Default state -->
+    <item>
+        <shape>
+            <solid android:color="#ffffff" /> <!-- White color for default state -->
+            <corners android:radius="30dp" />
+        </shape>
+    </item>
+</selector>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imageTopIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/match"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"/>
+    <ImageView
+        android:id="@+id/imagemessagematch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gotmatch"
+        android:layout_below="@id/imageTopIcon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"/>
+
+
+    <Button
+        android:id="@+id/check_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imagemessagematch"
+        android:layout_marginTop="40dp"
+        android:text="  Check it out"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:textSize="18sp"
+        />
+    <TextView
+        android:id="@+id/chooseWork"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="16dp"
+        android:layout_marginStart="65dp"
+        android:layout_below="@id/check_button"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+
+        android:text="If you need a guide on WOOP"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/guide_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imagemessagematch"
+        android:layout_marginTop="150dp"
+        android:text="  How WOOP Works"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:textSize="18sp"
+
+        />
+
+
+
+
+
+</RelativeLayout>

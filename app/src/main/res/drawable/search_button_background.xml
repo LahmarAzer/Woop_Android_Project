@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Drop shadow layer -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#50CCCCCC"/> <!-- Shadow color -->
+            <corners android:radius="30dp"/> <!-- Match the corner radius of the shape -->
+            <!-- The offset of the shadow. Adjust the bottom and right values to change the shadow's position -->
+            <padding
+                android:bottom="2dp"
+                android:right="2dp"
+                android:top="-2dp"
+                android:left="-2dp"/>
+        </shape>
+    </item>
+
+    <!-- Shape with rounded corners on top of the shadow layer -->
+    <item android:bottom="2dp" android:right="2dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="30dp"/>
+            <solid android:color="#ffffff"/>
+            <!-- Optional: if you want a border around the shape -->
+            <!-- <stroke android:width="1dp" android:color="#FF000000"/> -->
+        </shape>
+    </item>
+
+</layer-list>
