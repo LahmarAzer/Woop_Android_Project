@@ -16,10 +16,10 @@ public class TripDatabaseHelper extends SQLiteOpenHelper {
     private Context context;
     // Database Information
     private static final String DATABASE_NAME = "trip.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 4;
 
     // Table Name
-    public static final String TABLE_TRIPS = "trips";
+    public static final String TABLE_TRIPS = "tripdetails";
 
     // Table columns
     public static final String _ID = "_id";
@@ -78,6 +78,45 @@ public class TripDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    public Cursor getAlltrips() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT * FROM " + TABLE_TRIPS, null);
+    }
+
+    void addTrip(String title, String hostName, String location,String bio, String helpDescription,String hoursDescription, Float rating, Integer nbFeedback, Double lastActivity, Double replyRate, Integer nbWoopers){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        // Add values for each column based on the method parameters
+        //cv.put(COLUMN_IMAGE_PATH, imagePath);
+        cv.put(COLUMN_TITLE, title);
+        cv.put(COLUMN_LOCATION, location);
+        cv.put(COLUMN_HOST_NAME, hostName);
+        cv.put(COLUMN_RATING, rating);
+        cv.put(COLUMN_NB_FEEDBACK, nbFeedback);
+        cv.put(COLUMN_LAST_ACTIVITY, lastActivity);
+        cv.put(COLUMN_REPLY_RATE, replyRate);
+        cv.put(COLUMN_BIO, bio);
+        cv.put(COLUMN_HELP_DESCRIPTION, helpDescription);
+        cv.put(COLUMN_NB_WOOPERS, nbWoopers);
+        cv.put(COLUMN_HOURS_DESCRIPTION, hoursDescription);
+       // cv.put(COLUMN_TYPE_OF_HELP, typeOfHelp);
+      //  cv.put(COLUMN_LANGUAGES, languages);
+      //  cv.put(COLUMN_AMENITIES, amenities);
+
+        // Insert the trip data into the TRIPS table
+        long result = db.insert(TABLE_TRIPS, null, cv);
+        if(result == -1){
+            Toast.makeText(context, "Failed to add trip", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Trip added successfully!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    // Add methods for CRUD operations on trips (insert, update, delete, query)
+
+    // Get all trips in the database
     public ArrayList<Trip> getAllTrips2() {
         ArrayList<Trip> trips = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
@@ -167,48 +206,77 @@ public class TripDatabaseHelper extends SQLiteOpenHelper {
 
 
 
-        cursor.close();
+            cursor.close();
         }
 
         db.close();
         return trips;
     }
 
-    void addTrip(String title, String hostName, String location,String bio, String helpDescription,String hoursDescription, Float rating, Integer nbFeedback, Double lastActivity, Double replyRate, Integer nbWoopers){
+    // Add this method to your TripDatabaseHelper class
+
+    public boolean addTrip2(String hostName, String titre, String location) {
+        // Get writable database
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues cv = new ContentValues();
 
-        // Add values for each column based on the method parameters
-        //cv.put(COLUMN_IMAGE_PATH, imagePath);
-        cv.put(COLUMN_TITLE, title);
-        cv.put(COLUMN_LOCATION, location);
-        cv.put(COLUMN_HOST_NAME, hostName);
-        cv.put(COLUMN_RATING, rating);
-        cv.put(COLUMN_NB_FEEDBACK, nbFeedback);
-        cv.put(COLUMN_LAST_ACTIVITY, lastActivity);
-        cv.put(COLUMN_REPLY_RATE, replyRate);
-        cv.put(COLUMN_BIO, bio);
-        cv.put(COLUMN_HELP_DESCRIPTION, helpDescription);
-        cv.put(COLUMN_NB_WOOPERS, nbWoopers);
-        cv.put(COLUMN_HOURS_DESCRIPTION, hoursDescription);
-       // cv.put(COLUMN_TYPE_OF_HELP, typeOfHelp);
-      //  cv.put(COLUMN_LANGUAGES, languages);
-      //  cv.put(COLUMN_AMENITIES, amenities);
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_HOST_NAME, hostName);
+        values.put(COLUMN_TITLE, titre);
+        values.put(COLUMN_LOCATION, location);
 
-        // Insert the trip data into the TRIPS table
-        long result = db.insert(TABLE_TRIPS, null, cv);
-        if(result == -1){
-            Toast.makeText(context, "Failed to add trip", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(context, "Trip added successfully!", Toast.LENGTH_SHORT).show();
-        }
+        // Inserting Row
+        long rowId = db.insert(TABLE_TRIPS, null, values);
+        db.close(); // Closing database connection
+
+        return rowId != -1; // Return true if insert is successful
     }
+    public void addInitialTrips() {
+        SQLiteDatabase db = this.getWritableDatabase();
 
+        ContentValues trip1 = new ContentValues();
+        trip1.put(COLUMN_TITLE, "Trip 1");
+        trip1.put(COLUMN_LOCATION, "Location 1");
+        trip1.put(COLUMN_HOST_NAME, "Host 1");
+        trip1.put(COLUMN_RATING, 4.5);
+        trip1.put(COLUMN_NB_FEEDBACK, 20);
+        trip1.put(COLUMN_LAST_ACTIVITY, 24.5);
+        trip1.put(COLUMN_REPLY_RATE, 95.5);
+        trip1.put(COLUMN_BIO, "Bio 1");
+        trip1.put(COLUMN_HELP_DESCRIPTION, "Help Description 1");
+        trip1.put(COLUMN_NB_WOOPERS, 10);
+        trip1.put(COLUMN_HOURS_DESCRIPTION, "Hours Description 1");
 
-    // Add methods for CRUD operations on trips (insert, update, delete, query)
+        ContentValues trip2 = new ContentValues();
+        trip2.put(COLUMN_TITLE, "Trip 2");
+        trip2.put(COLUMN_LOCATION, "Location 2");
+        trip2.put(COLUMN_HOST_NAME, "Host 2");
+        trip2.put(COLUMN_RATING, 4.0);
+        trip2.put(COLUMN_NB_FEEDBACK, 15);
+        trip2.put(COLUMN_LAST_ACTIVITY, 48.0);
+        trip2.put(COLUMN_REPLY_RATE, 90.0);
+        trip2.put(COLUMN_BIO, "Bio 2");
+        trip2.put(COLUMN_HELP_DESCRIPTION, "Help Description 2");
+        trip2.put(COLUMN_NB_WOOPERS, 8);
+        trip2.put(COLUMN_HOURS_DESCRIPTION, "Hours Description 2");
 
-    // Get all trips in the database
+        ContentValues trip3 = new ContentValues();
+        trip3.put(COLUMN_TITLE, "Trip 3");
+        trip3.put(COLUMN_LOCATION, "Location 3");
+        trip3.put(COLUMN_HOST_NAME, "Host 3");
+        trip3.put(COLUMN_RATING, 4.8);
+        trip3.put(COLUMN_NB_FEEDBACK, 25);
+        trip3.put(COLUMN_LAST_ACTIVITY, 36.0);
+        trip3.put(COLUMN_REPLY_RATE, 98.0);
+        trip3.put(COLUMN_BIO, "Bio 3");
+        trip3.put(COLUMN_HELP_DESCRIPTION, "Help Description 3");
+        trip3.put(COLUMN_NB_WOOPERS, 12);
+        trip3.put(COLUMN_HOURS_DESCRIPTION, "Hours Description 3");
 
+        db.insert(TABLE_TRIPS, null, trip1);
+        db.insert(TABLE_TRIPS, null, trip2);
+        db.insert(TABLE_TRIPS, null, trip3);
 
+        db.close();
+    }
 
 }

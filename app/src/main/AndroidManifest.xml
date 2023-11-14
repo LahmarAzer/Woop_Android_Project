@@ -36,8 +36,14 @@
             android:name=".profileActivity"
             android:exported="true"/>
         <activity
-            android:name=".TripActivity"
+            android:name=".addTrip"
             android:exported="true"/>
+        <activity
+            android:name=".ListeTrips"
+            android:exported="true"/>
+        <activity
+            android:name=".TestList"
+            android:exported="false" />
 
         <activity
             android:name=".SignupActivity"
