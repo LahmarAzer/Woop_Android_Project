@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    >
+    <LinearLayout
+        android:id="@+id/tripsContainer"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="132dp"
+            android:background="@drawable/greentopbar"
+            >
+
+
+            <!-- Add navigation icon and title -->
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="20dp"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/ic_back_arrow"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="15dp"
+                android:text="Wishlist"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+            <!-- You can add navigation icon, title, etc., here -->
+
+
+
+            <TextView
+                android:id="@+id/reset_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="200dp"
+                android:text="Reset"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+
+        <!-- Layout file for a single trip item using LinearLayout -->
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:paddingTop="20dp"
+            tools:context=".ListeTrips">
+
+            <ImageView
+                android:id="@+id/wishlistitemImage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/default_image"
+                android:scaleType="centerCrop" />
+
+            <!-- heartIcon is now within a FrameLayout for overlaying on top of the ImageView -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/wishlistRemoveIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:src="@drawable/ic_heart_full" />
+
+            <TextView
+                android:id="@+id/wishlistItemTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="18sp"
+                android:text="Help us on our kite school"
+
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/wishlistItemLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="Djerba, Tunisia"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:visibility="visible"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    style="@style/CustomRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:stepSize="0.5" />
+
+                <TextView
+                    android:id="@+id/textViewRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="4dp"
+                    android:textColor="@color/green"
+                    android:visibility="visible"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

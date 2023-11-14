@@ -1,0 +1,162 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        >
+
+        <!-- Add your form fields here -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trip Title"
+            android:textColor="@color/green" />
+
+        <EditText
+            android:id="@+id/edittext_titre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter trip title" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:textColor="@color/green" />
+
+        <EditText
+            android:id="@+id/edittext_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter location" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Host Name"
+            android:textColor="@color/green" />
+
+        <EditText
+            android:id="@+id/edittext_hostName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter host name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rating"
+            android:textColor="@color/green" />
+
+        <EditText
+            android:id="@+id/edittext_rating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter rating" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Number of Feedbacks"
+            android:textColor="@color/green" />
+
+        <EditText
+            android:id="@+id/edittext_nbFeedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter number of feedbacks"
+            android:inputType="number"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last Activity (in hours)"
+            android:textColor="@color/green"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/edittext_lastActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter last activity in hours" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reply Percentage"
+            android:textColor="@color/green" />
+
+        <EditText
+            android:id="@+id/edittext_replyPercentage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter reply percentage"
+            android:inputType="number"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bio"
+            android:textColor="@color/green" />
+
+        <EditText
+            android:id="@+id/edittext_bio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter bio" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Help Description"
+            android:textColor="@color/green" />
+
+        <EditText
+            android:id="@+id/edittext_helpDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter help description" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Number of Woopers"
+            android:textColor="@color/green" />
+
+        <EditText
+            android:id="@+id/edittext_nbWoopers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter number of Woopers"
+            android:inputType="number"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hours Description"
+            android:textColor="@color/green" />
+
+        <EditText
+            android:id="@+id/edittext_hoursDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter hours description" />
+
+
+
+        <Button
+            android:id="@+id/button_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/green"
+            android:text="Submit"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+</ScrollView>

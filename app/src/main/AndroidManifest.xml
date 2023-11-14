@@ -26,7 +26,31 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".VariousActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".Optioninterface"
+            android:exported="true"/>
+        <activity
+            android:name=".AvailabiltyInterface"
+            android:exported="true"/>
+        <activity
+            android:name=".testliste"
+            android:exported="true"/>
+        <activity
+            android:name=".WooperActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".FriendActivity"
+            android:exported="true"/>
 
+        <activity
+            android:name=".tripDetails"
+            android:exported="true"/>
+        <activity
+            android:name=".MenuActivity"
+            android:exported="true"/>
         <activity
             android:name=".SearchActivity"
             android:exported="true"/>
@@ -39,11 +63,13 @@
         <activity
             android:name=".profileActivity"
             android:exported="true"/>
-
-
         <activity
             android:name=".SignupActivity"
             android:exported="true"/>
+        <activity
+            android:name=".ForgetActivity"
+            android:exported="true"/>
+
         <activity
             android:name=".SigninActivity"
             android:exported="true"/>

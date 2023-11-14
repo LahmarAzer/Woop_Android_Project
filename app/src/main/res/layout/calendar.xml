@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:padding="16dp">
+
+    <!-- Top bar with back button, title, and reset button -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="152dp"
+            android:background="@drawable/greentopbar"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <!-- Add navigation icon and title
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/ic_back_arrow"></ImageButton>-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:paddingStart="16dp"
+                android:text=" Availibility"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+            <!-- You can add navigation icon, title, etc., here -->
+
+
+
+            <Button
+                android:id="@+id/reset_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:paddingEnd="16dp"
+                android:text="Next"
+                android:textColor="#FFFFFF" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="376dp"
+            android:layout_height="59dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/search_button_background"
+            android:queryHint="Where do you want to explore"
+            android:paddingEnd="20dp"
+            android:iconifiedByDefault="false"
+            android:searchIcon="@drawable/ic_search"
+            android:inputType="text"
+            android:maxLines="1" />
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:layout_marginStart="20dp"
+            android:columnCount="3"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            android:rowCount="4">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_marginStart="7dp"
+                android:background="@drawable/exploregreen_button_background"
+                android:src="@drawable/vw_no"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true" />
+
+        </GridLayout>
+        <GridLayout
+            android:id="@+id/gridLayout22"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:layout_marginLeft="140dp"
+            android:columnCount="3"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            android:rowCount="4">
+
+            <FrameLayout
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_margin="2dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/explore_button_background">
+
+                <ImageView
+                    android:id="@+id/imageView22"
+                    android:layout_width="99dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_marginStart="7dp"
+                    android:src="@drawable/av_no" />
+            </FrameLayout>
+
+            <!-- End Block -->
+        </GridLayout>
+        <GridLayout
+            android:id="@+id/gridLayout33"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:layout_marginLeft="280dp"
+            android:columnCount="3"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            android:rowCount="4">
+
+            <FrameLayout
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_margin="2dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/explore_button_background">
+
+                <ImageView
+                    android:id="@+id/imageView33"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_marginStart="7dp"
+                    android:src="@drawable/op_no" />
+            </FrameLayout>
+
+
+
+            <!-- End Block -->
+        </GridLayout>
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Availability"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="Reset"
+             />
+
+    </RelativeLayout>
+
+
+
+    <!-- Date range -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+       >
+
+        <Button
+            android:id="@+id/fromDateButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="09/12/2022"
+            android:padding="10dp"
+            android:layout_margin="4dp"/>
+        <!-- android:background="@drawable/custom_button_background"
+       android:drawableLeft="@drawable/ic_calendar"-->
+
+       <!-- To date button -->
+        <Button
+            android:id="@+id/toDateButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="30/12/2022"
+            android:padding="10dp"
+            android:layout_margin="4dp"/>
+    </LinearLayout>
+
+    <!-- CalendarView -->
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:showWeekNumber="false"
+        android:firstDayOfWeek="1"
+        android:minDate="01/01/2022"
+        android:maxDate="31/12/2022"
+        />
+
+
+    <Button
+        android:id="@+id/check_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imagemessagematch"
+        android:layout_marginTop="40dp"
+        android:text="  we've found more than 200"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:textSize="18sp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#6200EA"
+    android:layout_marginTop="4dp"/>
+
+</LinearLayout>

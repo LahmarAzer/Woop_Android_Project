@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    >
+    <LinearLayout
+        android:id="@+id/tripsContainer"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="132dp"
+            android:background="@drawable/greentopbar"
+            >
+
+
+            <!-- Add navigation icon and title -->
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="20dp"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/ic_back_arrow"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="15dp"
+                android:text="Search"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+            <!-- You can add navigation icon, title, etc., here -->
+
+
+
+            <TextView
+                android:id="@+id/reset_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="200dp"
+                android:text="Reset"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="132dp"
+            android:layout_marginStart="20dp"
+            >
+            <SearchView
+                android:id="@+id/searchView"
+                android:layout_width="376dp"
+                android:layout_height="59dp"
+                android:background="@drawable/search_button_background"
+                android:iconifiedByDefault="false"
+                android:inputType="text"
+                android:maxLines="1"
+                android:queryHint="Where do you want to explore"
+                android:searchIcon="@drawable/ic_search" />
+
+
+            <Button
+                android:id="@+id/button_open_form"
+                android:backgroundTint="@color/green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:text="Add Trip"
+
+                />
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

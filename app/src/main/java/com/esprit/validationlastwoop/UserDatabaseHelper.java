@@ -13,8 +13,8 @@ import java.util.List;
 public class UserDatabaseHelper extends SQLiteOpenHelper {
 
     // Database Information
-    private static final String DATABASE_NAME = "user.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final String DATABASE_NAME = "woop.db";
+    private static final int DATABASE_VERSION = 1;
 
     // Table Name
     public static final String TABLE_USERS = "users";
@@ -36,10 +36,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-  /*  @Override
-    public void onCreate(SQLiteDatabase db) {
-        db.execSQL(CREATE_TABLE_USERS);
-    }*/
+
   @Override
   public void onCreate(SQLiteDatabase db) {
       try {
@@ -52,12 +49,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
 
       }
   }
-    /*public void logAllUsers() {
-        List<User> users = getAllUsers(); // Your existing method to fetch all users
-        for (User user : users) {
-            Log.d("Database Operations", "User: " + user.toString());
-        }
-    }*/
+
 
 
     @Override
@@ -136,6 +128,33 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return user;
     }
+    public User getUserByUsernameAndPassword(String username, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selection = COLUMN_USERNAME + " = ? AND " + COLUMN_PASSWORD + " = ?";
+        String[] selectionArgs = {username, password};
+        Cursor cursor = db.query(TABLE_USERS, null, selection, selectionArgs, null, null, null);
+
+        User user = null;
+        if (cursor.moveToFirst()) {
+            int usernameIndex = cursor.getColumnIndex(COLUMN_USERNAME);
+            int emailIndex = cursor.getColumnIndex(COLUMN_EMAIL);
+            int passwordIndex = cursor.getColumnIndex(COLUMN_PASSWORD);
+
+            // Check if the column indexes are valid
+            if (usernameIndex >= 0 && emailIndex >= 0 && passwordIndex >= 0) {
+                user = new User(
+                        cursor.getString(usernameIndex),
+                        cursor.getString(emailIndex),
+                        cursor.getString(passwordIndex)
+                );
+            }
+        }
+        cursor.close();
+        db.close();
+        return user;
+    }
+
+
 
 
 }

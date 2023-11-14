@@ -17,20 +17,21 @@
             android:background="@drawable/greentopbar"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-            <!-- Add navigation icon and title -->
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:paddingStart="16dp"
-                android:text=" Options"
+                android:text=" Various work"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
             <!-- You can add navigation icon, title, etc., here -->
 
-            <!-- Add a reset button on the right side -->
+
+
             <Button
-                android:id="@+id/Next_button"
+                android:id="@+id/next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center_vertical"
@@ -68,27 +69,16 @@
             android:padding="4dp"
             android:rowCount="4">
 
-            <FrameLayout
-                android:layout_width="10dp"
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_column="0"
-                android:layout_columnWeight="1"
                 android:layout_margin="2dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="2dp"
-                android:layout_marginBottom="2dp"
-                android:background="@drawable/explore_button_background">
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="99dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:layout_marginStart="7dp"
-                    android:src="@drawable/av_no" />
-            </FrameLayout>
+                android:layout_marginStart="7dp"
+                android:background="@drawable/exploregreen_button_background"
+                android:src="@drawable/vw_no"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true" />
 
         </GridLayout>
         <GridLayout
@@ -137,104 +127,6 @@
             android:padding="4dp"
             android:rowCount="4">
 
-
-
-            <ImageView
-                android:id="@+id/imageView33"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:layout_marginStart="7dp"
-                android:background="@drawable/exploregreen_button_background"
-                android:src="@drawable/op_no"
-                android:scaleType="centerCrop"
-                android:adjustViewBounds="true" />
-
-
-
-            <!-- End Block -->
-        </GridLayout>
-
-        <TextView
-            android:id="@+id/chooseWork"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="340dp"
-            android:background="?android:attr/selectableItemBackground"
-            android:padding="16dp"
-            android:text="How many Wooper?"
-            android:textStyle="bold" />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:layout_marginTop="380dp"
-            android:gravity="center_horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/buttonOne"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="One"
-                    android:background="@drawable/rounded_button_selected"
-                    android:textColor="#00FF00"
-                    android:layout_marginEnd="8dp"
-                    android:minWidth="90dp"
-                    android:padding="10dp"/>
-
-
-                <Button
-                    android:id="@+id/buttonTwo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Two"
-                    android:background="@drawable/rounded_button_unselected"
-                    android:textColor="#000000"
-                    android:layout_marginEnd="8dp"
-                    android:minWidth="90dp"
-                    android:padding="10dp"/>
-
-                <Button
-                    android:id="@+id/buttonMoreThanTwo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="More than two"
-                    android:background="@drawable/rounded_button_unselected"
-                    android:textColor="#000000"
-                    android:minWidth="90dp"
-                    android:padding="10dp"/>
-
-            </LinearLayout>
-        </LinearLayout>
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="1dp"
-            android:layout_marginTop="470dp"
-
-            android:background="@android:color/darker_gray" />
-
-
-
-        <GridLayout
-            android:id="@+id/gridLayout1"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/chooseWork"
-            android:layout_marginTop="130dp"
-            android:columnCount="3"
-            android:orientation="horizontal"
-            android:padding="4dp"
-            android:rowCount="4">
-
             <FrameLayout
                 android:layout_width="10dp"
                 android:layout_height="wrap_content"
@@ -248,36 +140,37 @@
                 android:layout_marginBottom="2dp"
                 android:background="@drawable/explore_button_background">
 
+                <ImageView
+                    android:id="@+id/imageView33"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_marginStart="7dp"
+                    android:src="@drawable/op_no" />
             </FrameLayout>
 
-            <CheckBox
-                android:id="@+id/checkBox1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_column="0"
-                android:layout_gravity="top|end"
-                android:layout_marginBottom="2dp" />
 
-            <ImageView
-                android:id="@+id/imageView1"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_column="0"
-                android:layout_margin="2dp"
-                android:layout_marginStart="7dp"
-                android:src="@drawable/wifi" />
 
             <!-- End Block -->
         </GridLayout>
+
+        <TextView
+            android:id="@+id/chooseWork"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="16dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="340dp"
+            android:text="Choose the work you can do"
+            android:textStyle="bold" />
+
         <GridLayout
-            android:id="@+id/gridLayout2"
+            android:id="@+id/gridLayout1"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/chooseWork"
-            android:layout_marginTop="130dp"
-            android:layout_marginLeft="140dp"
+            android:layout_marginTop="1dp"
             android:columnCount="3"
             android:orientation="horizontal"
             android:padding="4dp"
@@ -297,12 +190,50 @@
                 android:background="@drawable/explore_button_background">
 
                 <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="99dp"
+                    android:id="@+id/imageView1"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
                     android:layout_marginStart="7dp"
-                    android:src="@drawable/smoke" />
+                    android:src="@drawable/construction" />
+            </FrameLayout>
+
+            <CheckBox
+                android:id="@+id/checkBox1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_gravity="top|end"
+                android:layout_marginBottom="2dp" />
+
+            <!-- End Block -->
+        </GridLayout>
+        <GridLayout
+            android:id="@+id/gridLayout2"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chooseWork"
+            android:layout_marginTop="1dp"
+            android:layout_marginLeft="140dp"
+            android:columnCount="3"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            android:rowCount="4">
+
+            <FrameLayout
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_margin="2dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/explore_button_background">
+
             </FrameLayout>
 
             <CheckBox
@@ -314,6 +245,16 @@
                 android:layout_gravity="top|end"
                 android:layout_marginBottom="2dp" />
 
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="99dp"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_margin="2dp"
+                android:layout_marginStart="7dp"
+                android:src="@drawable/gardening" />
+
             <!-- End Block -->
         </GridLayout>
         <GridLayout
@@ -321,7 +262,7 @@
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/chooseWork"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="1dp"
             android:layout_marginLeft="280dp"
             android:columnCount="3"
             android:orientation="horizontal"
@@ -347,7 +288,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
                     android:layout_marginStart="7dp"
-                    android:src="@drawable/pethouse" />
+                    android:src="@drawable/education" />
             </FrameLayout>
 
             <CheckBox
@@ -366,7 +307,7 @@
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/chooseWork"
-            android:layout_marginTop="220dp"
+            android:layout_marginTop="130dp"
             android:columnCount="3"
             android:orientation="horizontal"
             android:padding="4dp"
@@ -391,9 +332,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
                     android:layout_marginStart="7dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginBottom="2dp"
-                    android:src="@drawable/washingmachine" />
+                    android:src="@drawable/sports" />
             </FrameLayout>
 
             <CheckBox
@@ -412,7 +351,7 @@
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/chooseWork"
-            android:layout_marginTop="220dp"
+            android:layout_marginTop="130dp"
             android:layout_marginLeft="140dp"
             android:columnCount="3"
             android:orientation="horizontal"
@@ -438,20 +377,11 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
                     android:layout_marginStart="7dp"
-                    android:src="@drawable/bed" />
+                    android:src="@drawable/babysitting" />
             </FrameLayout>
 
             <CheckBox
                 android:id="@+id/checkBox5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_column="0"
-                android:layout_gravity="top|end"
-                android:layout_marginBottom="2dp" />
-
-            <CheckBox
-                android:id="@+id/checkBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="0"
@@ -467,7 +397,7 @@
             android:layout_height="133dp"
             android:layout_below="@+id/chooseWork"
             android:layout_marginLeft="280dp"
-            android:layout_marginTop="220dp"
+            android:layout_marginTop="130dp"
             android:columnCount="3"
             android:orientation="horizontal"
             android:padding="4dp"
@@ -492,8 +422,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
                     android:layout_marginStart="7dp"
-                    android:src="@drawable/kitchen" />
-
+                    android:src="@drawable/designer" />
             </FrameLayout>
 
             <CheckBox
@@ -528,10 +457,6 @@
                 android:layout_width="10dp"
                 android:layout_height="10dp"
                 android:layout_margin="2dp"
-                android:layout_marginStart="2dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="2dp"
-                android:layout_marginBottom="2dp"
                 android:src="@drawable/dot_indicator_grey" />
 
             <ImageView
@@ -541,8 +466,19 @@
                 android:layout_margin="2dp"
                 android:src="@drawable/dot_indicator_grey" />
         </LinearLayout>
+        <Button
+            android:id="@+id/continue_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="690dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="0dp"
+            android:text="We've found more than 200 host" />
+
 
 
 
     </RelativeLayout>
+
 </ScrollView>
