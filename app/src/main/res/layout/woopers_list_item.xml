@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:gravity="center_horizontal"
+    android:clickable="false"
+    android:focusable="true">
+
+    <ImageView
+        android:id="@+id/friendImage"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/userimg"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="-10dp"
+        />
+
+
+
+    <TextView
+        android:id="@+id/friendName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lina"
+        android:layout_marginTop="15dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/friendLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New York"
+        android:textColor="@color/green"
+        android:layout_gravity="center_horizontal"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+
+
+    <Button
+        android:id="@+id/addFriendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:layout_marginTop="8dp"
+        />
+</LinearLayout>

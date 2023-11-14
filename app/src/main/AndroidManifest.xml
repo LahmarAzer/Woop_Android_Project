@@ -33,6 +33,12 @@
             android:name=".ExploreActivity"
             android:exported="true"/>
         <activity
+            android:name=".WooperActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".FriendActivity"
+            android:exported="true"/>
+        <activity
             android:name=".profileActivity"
             android:exported="true"/>
         <activity

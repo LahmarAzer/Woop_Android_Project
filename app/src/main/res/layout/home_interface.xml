@@ -167,6 +167,7 @@
 
         <!-- Profile Section -->
         <TextView
+            android:id="@+id/featuredTrips"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
@@ -193,5 +194,37 @@
 
             </LinearLayout>
         </HorizontalScrollView>
+
+        <!-- Friends Section -->
+        <TextView
+            android:id="@+id/friendsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="16dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/featuredTrips"
+            android:text="Travel Buddies"
+            android:textStyle="bold" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/friendsTitle"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/woopersContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="@color/white">
+
+                <!-- Your friends items will be added here horizontally -->
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
     </RelativeLayout>
 </ScrollView>
