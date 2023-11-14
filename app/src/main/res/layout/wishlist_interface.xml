@@ -6,7 +6,7 @@
     android:background="@color/white"
     >
     <LinearLayout
-        android:id="@+id/wishlistRecyclerView"
+        android:id="@+id/tripsContainer"
         android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -50,7 +50,7 @@
                 android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="200dp"
-                android:text="Back"
+                android:text="Reset"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
         </LinearLayout>

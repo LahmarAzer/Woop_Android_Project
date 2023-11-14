@@ -7,7 +7,7 @@
     android:paddingStart="40dp"
     android:paddingEnd="40dp"
     android:paddingTop="20dp"
-    tools:context=".WishlistActivity">
+    tools:context=".ListeTrips">
 
     <ImageView
         android:id="@+id/wishlistitemImage"

@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +31,7 @@ public class ListeTrips extends AppCompatActivity {
         });
     }
 
+
     private void displayOffers() {
         TripDatabaseHelper dbHelper = new TripDatabaseHelper(ListeTrips.this);
         ArrayList<Trip> trips = dbHelper.getAllTrips2();
@@ -47,12 +49,12 @@ public class ListeTrips extends AppCompatActivity {
 
             // Set offer details
             //ImageView offerImageView = offerCardView.findViewById(R.id.imageView);
-            TextView tripTitle = offerCardView.findViewById(R.id.itemTitle);
-            TextView tripLocation = offerCardView.findViewById(R.id.itemLocation);
+           // TextView tripTitle = offerCardView.findViewById(R.id.itemTitle);
+           // TextView tripLocation = offerCardView.findViewById(R.id.itemLocation);
 
             // Set the text data
-            tripTitle.setText(trip.getTitre());
-            tripLocation.setText(trip.getLocation());
+           // tripTitle.setText(trip.getTitre());
+          //  tripLocation.setText(trip.getLocation());
 
             // Add the inflated offer card view to the container
             offerContainer.addView(offerCardView);
@@ -73,4 +75,6 @@ public class ListeTrips extends AppCompatActivity {
             displayOffers(); // Refresh the list when we return from adding a new offer
         }
     }
+
+
 }

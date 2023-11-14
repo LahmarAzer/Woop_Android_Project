@@ -21,6 +21,9 @@ public class Trip {
 
     }
 
+    public Trip(long tripId, String titre, String location, String bio, float hostname) {
+    }
+
     public String getImagePath() {
         return imagePath;
     }

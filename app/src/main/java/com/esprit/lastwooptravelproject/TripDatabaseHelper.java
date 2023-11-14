@@ -23,21 +23,10 @@ public class TripDatabaseHelper extends SQLiteOpenHelper {
 
     // Table columns
     public static final String _ID = "_id";
-    public static final String COLUMN_IMAGE_PATH = "image_path";
     public static final String COLUMN_TITLE = "titre";
     public static final String COLUMN_LOCATION = "location";
     public static final String COLUMN_HOST_NAME = "host_name";
-    public static final String COLUMN_RATING = "rating";
-    public static final String COLUMN_NB_FEEDBACK = "nb_feedback";
-    public static final String COLUMN_LAST_ACTIVITY = "last_activity";
-    public static final String COLUMN_REPLY_RATE = "reply_rate";
     public static final String COLUMN_BIO = "bio";
-    public static final String COLUMN_HELP_DESCRIPTION = "help_description";
-    public static final String COLUMN_NB_WOOPERS = "nb_woopers";
-    public static final String COLUMN_HOURS_DESCRIPTION = "hours_description";
-    public static final String COLUMN_TYPE_OF_HELP = "type_of_help";
-    public static final String COLUMN_LANGUAGES = "languages";
-    public static final String COLUMN_AMENITIES = "amenities";
 
     // Creating table query
     private static final String CREATE_TABLE_TRIPS = "CREATE TABLE " + TABLE_TRIPS + "(" +
@@ -46,17 +35,7 @@ public class TripDatabaseHelper extends SQLiteOpenHelper {
             COLUMN_TITLE + " TEXT, " +
             COLUMN_LOCATION + " TEXT, " +
             COLUMN_HOST_NAME + " TEXT, " +
-            COLUMN_RATING + " REAL, " +
-            COLUMN_NB_FEEDBACK + " INTEGER, " +
-            COLUMN_LAST_ACTIVITY + " REAL, " +
-            COLUMN_REPLY_RATE + " REAL, " +
-            COLUMN_BIO + " TEXT, " +
-            COLUMN_HELP_DESCRIPTION + " TEXT, " +
-            COLUMN_NB_WOOPERS + " INTEGER, " +
-            COLUMN_HOURS_DESCRIPTION + " TEXT, " +
-            COLUMN_TYPE_OF_HELP + " TEXT, " +
-            COLUMN_LANGUAGES + " TEXT, " +
-            COLUMN_AMENITIES + " TEXT);";
+            COLUMN_BIO + " TEXT);";
 
     public TripDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -92,14 +71,7 @@ public class TripDatabaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_TITLE, title);
         cv.put(COLUMN_LOCATION, location);
         cv.put(COLUMN_HOST_NAME, hostName);
-        cv.put(COLUMN_RATING, rating);
-        cv.put(COLUMN_NB_FEEDBACK, nbFeedback);
-        cv.put(COLUMN_LAST_ACTIVITY, lastActivity);
-        cv.put(COLUMN_REPLY_RATE, replyRate);
         cv.put(COLUMN_BIO, bio);
-        cv.put(COLUMN_HELP_DESCRIPTION, helpDescription);
-        cv.put(COLUMN_NB_WOOPERS, nbWoopers);
-        cv.put(COLUMN_HOURS_DESCRIPTION, hoursDescription);
        // cv.put(COLUMN_TYPE_OF_HELP, typeOfHelp);
       //  cv.put(COLUMN_LANGUAGES, languages);
       //  cv.put(COLUMN_AMENITIES, amenities);
@@ -122,21 +94,11 @@ public class TripDatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         String[] projection = {
-                _ID ,
-                COLUMN_TITLE ,
-                COLUMN_LOCATION ,
-                COLUMN_HOST_NAME ,
-                COLUMN_RATING ,
-                COLUMN_NB_FEEDBACK ,
-                COLUMN_LAST_ACTIVITY ,
-                COLUMN_REPLY_RATE ,
-                COLUMN_BIO ,
-                COLUMN_HELP_DESCRIPTION ,
-                COLUMN_NB_WOOPERS ,
-                COLUMN_HOURS_DESCRIPTION ,
-                COLUMN_TYPE_OF_HELP ,
-                COLUMN_LANGUAGES ,
-                COLUMN_AMENITIES
+                _ID,
+                COLUMN_TITLE,
+                COLUMN_LOCATION,
+                COLUMN_HOST_NAME,
+                COLUMN_BIO
         };
 
         Cursor cursor = db.query(
@@ -152,59 +114,23 @@ public class TripDatabaseHelper extends SQLiteOpenHelper {
         if (cursor != null && cursor.moveToFirst()) {
             do {
                 long tripIdColumnIndex = cursor.getColumnIndex(_ID);
-                long tripId = tripIdColumnIndex != -1 ? cursor.getLong((int) tripIdColumnIndex) : -1L;
+                long tripId = tripIdColumnIndex != -1 ? cursor.getInt((int) tripIdColumnIndex) : -1L;
 
-                int titleColumnIndex = cursor.getColumnIndex(COLUMN_TITLE);
-                String titre = titleColumnIndex != -1 ? cursor.getString(titleColumnIndex) : "";
+                int nameColumnIndex = cursor.getColumnIndex(COLUMN_TITLE);
+                String titre = nameColumnIndex != -1 ? cursor.getString(nameColumnIndex) : "";
 
                 int locationColumnIndex = cursor.getColumnIndex(COLUMN_LOCATION);
                 String location = locationColumnIndex != -1 ? cursor.getString(locationColumnIndex) : "";
 
-                int hostNameColumnIndex = cursor.getColumnIndex(COLUMN_HOST_NAME);
-                String hostName = hostNameColumnIndex != -1 ? cursor.getString(hostNameColumnIndex) : "";
-
-                int ratingColumnIndex = cursor.getColumnIndex(COLUMN_RATING);
-                float rating = ratingColumnIndex != -1 ? cursor.getFloat(ratingColumnIndex) : 0;
-
-                int feedbackColumnIndex = cursor.getColumnIndex(COLUMN_NB_FEEDBACK);
-                int nbFeedback = feedbackColumnIndex != -1 ? cursor.getInt(feedbackColumnIndex) : 0;
-
-                int lastActivityColumnIndex = cursor.getColumnIndex(COLUMN_LAST_ACTIVITY);
-                double lastActivity = lastActivityColumnIndex != -1 ? cursor.getDouble(lastActivityColumnIndex) : 0;
-
-                int replyRateColumnIndex = cursor.getColumnIndex(COLUMN_REPLY_RATE);
-                double replyPercentage = replyRateColumnIndex != -1 ? cursor.getDouble(replyRateColumnIndex) : 0;
-
                 int bioColumnIndex = cursor.getColumnIndex(COLUMN_BIO);
                 String bio = bioColumnIndex != -1 ? cursor.getString(bioColumnIndex) : "";
 
-                int helpDescriptionColumnIndex = cursor.getColumnIndex(COLUMN_HELP_DESCRIPTION);
-                String helpDescription = helpDescriptionColumnIndex != -1 ? cursor.getString(helpDescriptionColumnIndex) : "";
+                int HostNameColumnIndex = cursor.getColumnIndex(COLUMN_HOST_NAME);
+                float hostname = HostNameColumnIndex != -1 ? cursor.getFloat(HostNameColumnIndex) : -1;
 
-                int nbWoopersColumnIndex = cursor.getColumnIndex(COLUMN_NB_WOOPERS);
-                int nbWoopers = nbWoopersColumnIndex != -1 ? cursor.getInt(nbWoopersColumnIndex) : 0;
-
-                int hoursDescriptionColumnIndex = cursor.getColumnIndex(COLUMN_HOURS_DESCRIPTION);
-                String hoursDescription = hoursDescriptionColumnIndex != -1 ? cursor.getString(hoursDescriptionColumnIndex) : "";
-
-                int typeOfHelpColumnIndex = cursor.getColumnIndex(COLUMN_TYPE_OF_HELP);
-                String typeOfHelp = typeOfHelpColumnIndex != -1 ? cursor.getString(typeOfHelpColumnIndex) : "";
-
-                int languagesColumnIndex = cursor.getColumnIndex(COLUMN_LANGUAGES);
-                String languages = languagesColumnIndex != -1 ? cursor.getString(languagesColumnIndex) : "";
-
-                int amenitiesColumnIndex = cursor.getColumnIndex(COLUMN_AMENITIES);
-                String amenities = amenitiesColumnIndex != -1 ? cursor.getString(amenitiesColumnIndex) : "";
-
-                // Create a new Trip object using the read values (modify the Trip constructor to match your design)
-                Trip trip = new Trip(tripId, titre, location, hostName, rating, nbFeedback, lastActivity, replyPercentage, bio, helpDescription, nbWoopers, hoursDescription, typeOfHelp, languages, amenities);
-
-                // Add the trip to your list
+                Trip trip = new Trip(tripId, titre, location, bio, hostname);
                 trips.add(trip);
-
             } while (cursor.moveToNext());
-
-
 
             cursor.close();
         }
@@ -237,40 +163,19 @@ public class TripDatabaseHelper extends SQLiteOpenHelper {
         trip1.put(COLUMN_TITLE, "Trip 1");
         trip1.put(COLUMN_LOCATION, "Location 1");
         trip1.put(COLUMN_HOST_NAME, "Host 1");
-        trip1.put(COLUMN_RATING, 4.5);
-        trip1.put(COLUMN_NB_FEEDBACK, 20);
-        trip1.put(COLUMN_LAST_ACTIVITY, 24.5);
-        trip1.put(COLUMN_REPLY_RATE, 95.5);
         trip1.put(COLUMN_BIO, "Bio 1");
-        trip1.put(COLUMN_HELP_DESCRIPTION, "Help Description 1");
-        trip1.put(COLUMN_NB_WOOPERS, 10);
-        trip1.put(COLUMN_HOURS_DESCRIPTION, "Hours Description 1");
 
         ContentValues trip2 = new ContentValues();
         trip2.put(COLUMN_TITLE, "Trip 2");
         trip2.put(COLUMN_LOCATION, "Location 2");
         trip2.put(COLUMN_HOST_NAME, "Host 2");
-        trip2.put(COLUMN_RATING, 4.0);
-        trip2.put(COLUMN_NB_FEEDBACK, 15);
-        trip2.put(COLUMN_LAST_ACTIVITY, 48.0);
-        trip2.put(COLUMN_REPLY_RATE, 90.0);
         trip2.put(COLUMN_BIO, "Bio 2");
-        trip2.put(COLUMN_HELP_DESCRIPTION, "Help Description 2");
-        trip2.put(COLUMN_NB_WOOPERS, 8);
-        trip2.put(COLUMN_HOURS_DESCRIPTION, "Hours Description 2");
 
         ContentValues trip3 = new ContentValues();
         trip3.put(COLUMN_TITLE, "Trip 3");
         trip3.put(COLUMN_LOCATION, "Location 3");
         trip3.put(COLUMN_HOST_NAME, "Host 3");
-        trip3.put(COLUMN_RATING, 4.8);
-        trip3.put(COLUMN_NB_FEEDBACK, 25);
-        trip3.put(COLUMN_LAST_ACTIVITY, 36.0);
-        trip3.put(COLUMN_REPLY_RATE, 98.0);
         trip3.put(COLUMN_BIO, "Bio 3");
-        trip3.put(COLUMN_HELP_DESCRIPTION, "Help Description 3");
-        trip3.put(COLUMN_NB_WOOPERS, 12);
-        trip3.put(COLUMN_HOURS_DESCRIPTION, "Hours Description 3");
 
         db.insert(TABLE_TRIPS, null, trip1);
         db.insert(TABLE_TRIPS, null, trip2);
